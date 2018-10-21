@@ -1,25 +1,9 @@
 package by.haa.tms;
 
+abstract public class HomeWork {
 
-public class HomeWork {
+    abstract protected String[] getTaskDescription();
 
-    protected String[] taskDescription = {"!!!!!"};
-
-//    public HomeWork() {
-////        System.out.println(Arrays.toString(this.getTaskDescription()));
-//    }
-
-    protected String[] getTaskDescription() {
-        return taskDescription;
-    }
-
-
-    public void run(int taskNumber){
-
-    }
-
-    public String[] returnTaskDescription(){
-        return taskDescription;
-    }
+    abstract public boolean run(int taskNumber);
 
 }

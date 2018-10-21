@@ -34,7 +34,6 @@ public class Runner {
         instance.route();
     }
 
-
     private void route() {
         this.scanIn = new Scanner(System.in, "UTF-8");
         System.out.println("Hello! Introduce youreself");
@@ -95,7 +94,6 @@ public class Runner {
         }
     }
 
-
     private void taskSelection(int homeWorkNumber) {
         printer.split();
         System.out.printf("%s!, choose a task from the list:\n", this.userName);
@@ -103,12 +101,14 @@ public class Runner {
         printer.split();
         System.out.println(Arrays.toString(homeWorkObject.getTaskDescription()));
         printer.split();
-        while (scanIn.hasNext()) {
+        do {
             this.validateInput();
             this.taskNumber = scanIn.nextInt();
-            homeWorkObject.run(this.taskNumber);
+            if(!homeWorkObject.run(this.taskNumber)){
+                return;
+            };
         }
-
+        while (this.scanIn.hasNext());
     }
 
 }
